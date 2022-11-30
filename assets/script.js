@@ -1,33 +1,26 @@
 
 
-var secondsLeft = 10;
+var secondsLeft;
 var timeEl = document.querySelector(".timer");
 var currentQuestion = 0;
-var choice1 = document.querySelector("#choice1");
-var choice2 = document.querySelector("#choice2");
-var choice3 = document.querySelector("#choice3");
-var choice4 = document.querySelector("#choice4");
-
-var i=0
-
+var timerInterval;
 var startBtn = document.querySelector("#start");
-var nextBtn = document.querySelector("#next");
 
 // Function to create timer in upper right corner of page
 
 function setTime() {
-var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds remaining";
+    secondsLeft = 10;
+    timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft + " seconds remaining";
 
-    if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        return "Time is Up";
-    }
-}, 1000)
+        if (secondsLeft <= 0) {
+            clearInterval(timerInterval);
+            endGame();
+        }
+    }, 1000)
 }
 
-setTime();
 
 // Function to create quiz using objects
 
@@ -73,9 +66,11 @@ console.log(quizQuestions);
 
 
 function askNextQuestion() {
-    currentQuestion++;
     var q = document.getElementById("quiz");
 
+    if (currentQuestion < quizQuestions.length) {
+
+     
     var qhtml = "<p>";
 
         qhtml = qhtml + quizQuestions[currentQuestion].inquiry;
@@ -117,30 +112,45 @@ function askNextQuestion() {
     document.getElementById("three").addEventListener("click", pressThree);
     document.getElementById("four").addEventListener("click", pressFour);
 
+   } else {
+    clearInterval(timerInterval);
+    q.innerHTML = "Game Over";
 }
+}
+
+function endGame() {
+    var name = prompt("Please enter your initials");
+    localStorage.setItem(name, secondsLeft);
+    highScore();
+   }
+
 
 function pressOne() {
     if (quizQuestions[currentQuestion].answer != 0) {
         speedUpTimer();
     }
+    currentQuestion++;
     askNextQuestion();
 }
 function pressTwo() {
     if (quizQuestions[currentQuestion].answer != 1) {
         speedUpTimer();
     }
+    currentQuestion++;
     askNextQuestion();
 }
 function pressThree() {
     if (quizQuestions[currentQuestion].answer != 2) {
         speedUpTimer();
     }
+    currentQuestion++;
     askNextQuestion();
 }
 function pressFour() {
     if (quizQuestions[currentQuestion].answer != 3) {
         speedUpTimer();
     }
+    currentQuestion++;
     askNextQuestion();
 }
 
@@ -149,28 +159,20 @@ function speedUpTimer() {
 }
 
 function startQuiz() {
-    currentQuestion = -1;
+    currentQuestion = 0;
+    setTime();
     askNextQuestion();
+}
+function highScore() {
+    var q = document.getElementById("quiz");
+    q.innerHTML = "";
+
 }
 
 startBtn.addEventListener("click", startQuiz);
-nextBtn.addEventListener("click", askNextQuestion);
+
 
 
 // Function to lose time with wrong answer
 
 // Function to save initials and score
-
-
-// Action to be performed on click store in named function
-// function showResponse(event) {
-//     // Prevent default action
-//     event.preventDefault();
-//     console.log(event);
-//     var response = "Thank you for your submission " + nameInput.value + "! We will reach out to you at " + emailInput.value + ".";
-//     submissionResponseEl.textContent = response;
-//   }
-    
-//   // Add listener to submit element
-//   submitEl.addEventListener("click", showResponse);
-  
