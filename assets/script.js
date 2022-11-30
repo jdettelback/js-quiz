@@ -9,7 +9,7 @@ var startBtn = document.querySelector("#start");
 // Function to create timer in upper right corner of page
 
 function setTime() {
-    secondsLeft = 10;
+    secondsLeft = 60;
     timerInterval = setInterval(function() {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds remaining";
@@ -115,6 +115,7 @@ function askNextQuestion() {
    } else {
     clearInterval(timerInterval);
     q.innerHTML = "Game Over";
+    endGame();
 }
 }
 
@@ -155,6 +156,7 @@ function pressFour() {
 }
 
 function speedUpTimer() {
+    secondsLeft -= 10;
     console.log("speedup");
 }
 
@@ -166,13 +168,13 @@ function startQuiz() {
 function highScore() {
     var q = document.getElementById("quiz");
     q.innerHTML = "";
-
+    for (var key in localStorage) {
+        console.log(localStorage.getItem(key));
+    }
 }
 
 startBtn.addEventListener("click", startQuiz);
 
-
-
 // Function to lose time with wrong answer
 
-// Function to save initials and score
+
