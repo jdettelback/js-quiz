@@ -1,0 +1,66 @@
+body {
+  background-color: lightblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: block;
+  margin: 80px auto;
+  text-align: center;
+  justify-content: center;
+}
+
+#timer {
+  float: right;
+  justify-content: right;
+}
+
+#directions {
+  display: block;
+  font: 45px;
+  text-align: center;
+  justify-content: center;
+  margin: 0 15% 0 15%;
+  padding: 30px;
+}
+
+#start {
+  padding: 10px;
+  margin: 5px 25px 20px 25px;
+  cursor: pointer;
+  font-size: 24px;
+  justify-content: center;
+  background-color: white; 
+}
+
+#quiz {
+  font-size: 18px;
+}
+
+#one, #two, #three, #four {
+  display: flex;
+  display: inline;
+  justify-items: space-around;
+  padding: 10px;
+  margin: 5px 25px 20px 25px;
+
+  font-size: 20px;
+  justify-content: center;
+  background-color: white; 
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+#score {
+  font: 35px;
+  justify-content: center;
+}
+
+.finish {
+  display: none;
+}
+
