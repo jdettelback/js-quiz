@@ -11,8 +11,9 @@ body {
 }
 
 #timer {
+  display: block;
   float: right;
-  justify-content: right;
+  margin-right: 20px;
 }
 
 #directions {
@@ -22,6 +23,7 @@ body {
   justify-content: center;
   margin: 0 15% 0 15%;
   padding: 30px;
+  flex-direction: column;
 }
 
 #start {
@@ -30,37 +32,55 @@ body {
   cursor: pointer;
   font-size: 24px;
   justify-content: center;
-  background-color: white; 
+  background-color: white;
 }
 
 #quiz {
-  font-size: 18px;
-}
-
-#one, #two, #three, #four {
   display: flex;
-  display: inline;
-  justify-items: space-around;
-  padding: 10px;
-  margin: 5px 25px 20px 25px;
-
-  font-size: 20px;
+  display: column;
+  font-size: 25px;
+  flex-direction: column;
   justify-content: center;
-  background-color: white; 
 }
 
-.results {
+#one,
+#two,
+#three,
+#four {
   display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  align-items: center;
+  justify-items: center;
+}  
+
+
+#stopGame {
+  display: none;
+  direction: column;
   justify-content: center;
   text-align: center;
 }
 
 #score {
+  display: block;
   font: 35px;
   justify-content: center;
 }
 
-.finish {
-  display: none;
+#playerName {
+  display: block;
+  font: 25px;
+  justify-content: center;
 }
 
+#finished {
+  display: none;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 5px;
+  font-size: 30px;
+  }

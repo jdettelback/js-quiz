@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Javascript Quiz</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Javascript Quiz</h1>>
-        <p id = "directions">You have 60 seconds to answer as many questions as you can.  If you answer incorrectly, you will lose 10 seconds of time. Your final score is the time remaining at the end of the quiz.
-            Good Luck!</p>
-        <p id = "quiz"> </p>
+      <div class="startGame">
+        <h1>Javascript Quiz</h1>
+        <p id="directions">
+          You have 60 seconds to answer as many questions as you can. If you
+          answer incorrectly, you will lose 10 seconds of time. Your final score
+          is the time remaining at the end of the quiz. <br/><br/>
+          Good Luck!
+        </p>
+        <p id="quiz"></p>
         <button id="start">Start Quiz</button>
+      </div>
+
+      <div id="runGame">
+        <div class="startquiz"></div>
+        <div id="timer"></div>
+      </div>
+
+      <div id="stopGame">
+        <div id="score"></div>
         
+          <label for="pName">Please input your initials:</label><br /><br />
+          <br /><br />
+          <input type="text" id="pName" name="pName" />
+          <button id="submit">Submit</button>
+      
+      </div>
 
-    </div>
-    <div class="startquiz">
-        <div id = "timer"></div>
-        <script src="./assets/script.js"></script>
-    </div>
+      <div id="finished">
+        <div id="playerName"></div>
+      </div>
 
-    <div class="results">
-        <p id="score"></p>
+      
     </div>
-
-    <div class="finish">
-
-        <button id="again">Play Again</button>
-        <button id="highscore">High Scores</button>
-        
-    </div>
-</body>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
