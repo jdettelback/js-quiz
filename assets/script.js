@@ -208,6 +208,5 @@ function finishedGame() {
     var playerName = document.getElementById("playerName");
     localStorage.setItem(pName, secondsLeft);
     playerName.innerHTML = "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
-cd
 }
   
