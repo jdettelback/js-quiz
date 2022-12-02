@@ -176,13 +176,13 @@ function speedUpTimer() {
 // Function to start quiz
 
 function startQuiz() {
-    timeEl.setAttribute("style", "display: block");
-    runGame.setAttribute("style", "display: block");
+  timeEl.setAttribute("style", "display: block");
+  runGame.setAttribute("style", "display: block");
   directions.setAttribute("style", "display: none");
   startBtn.setAttribute("style", "display: none");
   finished.setAttribute("style", "display: none");
   stopGame.setAttribute("style", "display: none");
-    
+
   currentQuestion = 0;
   setTime();
   askNextQuestion();
@@ -194,19 +194,18 @@ submitBtn.addEventListener("click", finishedGame);
 // Function to end game and collect user info
 
 function endGame() {
-    stopGame.setAttribute("style", "display: block");
-    timeEl.setAttribute("style", "display: none");
-    
+  stopGame.setAttribute("style", "display: block");
+  timeEl.setAttribute("style", "display: none");
 }
- 
-function finishedGame() {
-    finished.setAttribute("style", "display: block");
-    startBtn.setAttribute("style", "display: block");
-    stopGame.setAttribute("style", "display: none");
 
-    var pName = document.getElementById("pName").value;
-    var playerName = document.getElementById("playerName");
-    localStorage.setItem(pName, secondsLeft);
-    playerName.innerHTML = "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
+function finishedGame() {
+  finished.setAttribute("style", "display: block");
+  startBtn.setAttribute("style", "display: block");
+  stopGame.setAttribute("style", "display: none");
+
+  var pName = document.getElementById("pName").value;
+  var playerName = document.getElementById("playerName");
+  localStorage.setItem(pName, secondsLeft);
+  playerName.innerHTML =
+    "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
 }
-  
