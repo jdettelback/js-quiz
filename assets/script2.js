@@ -1,6 +1,8 @@
 
 var scores = [];
-       
+
+// Function to pull initials and high scores from local storage
+
 function highScoreList() {
     var list = "";
     var l = document.getElementById("list");
@@ -27,6 +29,7 @@ function highScoreList() {
     l.innerHTML = list;
 }
 
+// Function to put high scores (from local storage) in numerical order
 function compare(a,b) {
     var ascore = parseInt(a.score);
     var bscore = parseInt(b.score);
@@ -42,16 +45,3 @@ function compare(a,b) {
 
 highScoreList();
 
-// function finishedGame() {
-//     finished.setAttribute("style", "display: block");
-//     startBtn.setAttribute("style", "display: block !important");
-//     stopGame.setAttribute("style", "display: none");
-  
-//     var pName = document.getElementById("pName").value;
-//     var playerName = document.getElementById("playerName");
-//     localStorage.setItem(pName, secondsLeft);
-//     playerName.innerHTML =
-//       "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
-//   }
-
-//   finishedGame();

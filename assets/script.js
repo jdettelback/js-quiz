@@ -103,7 +103,7 @@ var quizQuestions = [
   },
 ];
 
-// Function to actually bring up questions to answer
+// Function to actually bring up questions for player to answer
 
 function askNextQuestion() {
   var q = document.getElementById("quiz");
@@ -124,19 +124,22 @@ function askNextQuestion() {
     qhtml += "<button id='four'>";
     qhtml += quizQuestions[currentQuestion].choices.choice4;
     qhtml += "</button>";
-    //console.log(qhtml);
+    
     q.innerHTML = qhtml;
 
     document.getElementById("one").addEventListener("click", pressOne);
     document.getElementById("two").addEventListener("click", pressTwo);
     document.getElementById("three").addEventListener("click", pressThree);
     document.getElementById("four").addEventListener("click", pressFour);
-  } else {
+  } 
+  else {
     clearInterval(timerInterval);
     q.innerHTML = "Game Over";
     endGame();
   }
 }
+
+// Functions to check answer and either penalize or not
 
 function pressOne() {
   if (quizQuestions[currentQuestion].answer != 0) {
@@ -189,26 +192,27 @@ function startQuiz() {
   askNextQuestion();
 }
 
-startBtn.addEventListener("click", startQuiz);
-submitBtn.addEventListener("click", finishedGame);
 
-// Function to end game and collect user info
+// Function to end game
 
 function endGame() {
   stopGame.setAttribute("style", "display: block");
   timeEl.setAttribute("style", "display: none");
 }
 
+// Function to collect player info and store in local storage
+
 function finishedGame() {
   finished.setAttribute("style", "display: block");
-  //startBtn.setAttribute("style", "display: none");
-  stopGame.setAttribute("style", "display: block");
-
+  
   var pName = document.getElementById("pName").value;
   var playerName = document.getElementById("playerName");
+
   localStorage.setItem(pName, secondsLeft);
   score.innerHTML = "<p>" + "You scored a  " + secondsLeft;
   playerName.innerHTML =
     "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
-  
-}
+  }
+
+startBtn.addEventListener("click", startQuiz);
+submitBtn.addEventListener("click", finishedGame);
