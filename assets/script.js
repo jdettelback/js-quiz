@@ -9,6 +9,7 @@ var container = document.querySelector(".container");
 var runGame = document.getElementById("runGame");
 var stopGame = document.getElementById("stopGame");
 var finished = document.getElementById("finished");
+var score = document.getElementById("score");
 var pName = "";
 
 // Function to create timer
@@ -196,16 +197,18 @@ submitBtn.addEventListener("click", finishedGame);
 function endGame() {
   stopGame.setAttribute("style", "display: block");
   timeEl.setAttribute("style", "display: none");
-}
 
-function finishedGame() {
+
+//function finishedGame() {
   finished.setAttribute("style", "display: block");
-  startBtn.setAttribute("style", "display: block !important");
-  stopGame.setAttribute("style", "display: none");
+  //startBtn.setAttribute("style", "display: none");
+  stopGame.setAttribute("style", "display: block");
 
   var pName = document.getElementById("pName").value;
   var playerName = document.getElementById("playerName");
   localStorage.setItem(pName, secondsLeft);
-  playerName.innerHTML =
-    "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
+  score.innerHTML = "<p>" + "You scored a  " + secondsLeft;
+  //playerName.innerHTML =
+    //"<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
+  
 }

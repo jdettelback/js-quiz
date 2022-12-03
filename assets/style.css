@@ -1,3 +1,5 @@
+
+
 body {
   background-color: lightblue;
   font-family: Arial, Helvetica, sans-serif;
@@ -18,24 +20,20 @@ body {
 
 #directions {
   display: block;
-  font: 45px;
-  text-align: center;
   justify-content: center;
   margin: 0 15% 0 15%;
   padding: 30px;
-  flex-direction: column;
-}
+  }
 
 .startGame {
-
   text-align: center;
-  flex-direction: column;
-}
+  }
 
-#start {
+#start,
+#submit,
+#reStart {
   padding: 10px;
   margin: 5px 25px 20px 25px;
-  cursor: pointer;
   font-size: 24px;
   text-align: center;
   justify-content: center;
@@ -54,14 +52,10 @@ body {
 #two,
 #three,
 #four {
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
   font-size: 20px;
   background-color: white;
-  align-items: center;
-  justify-items: center;
 }
 
 #stopGame {
@@ -83,10 +77,18 @@ body {
   justify-content: center;
 }
 
+
 #finished {
   display: none;
   justify-content: space-around;
   padding: 10px;
   margin: 5px;
   font-size: 30px;
+}
+
+#list {
+  display: block;
+  text-align: center;
+  list-style-type: none;
+  font-size: 20px;
 }
