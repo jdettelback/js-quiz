@@ -200,7 +200,7 @@ function endGame() {
 
 function finishedGame() {
   finished.setAttribute("style", "display: block");
-  startBtn.setAttribute("style", "display: block");
+  startBtn.setAttribute("style", "display: block !important");
   stopGame.setAttribute("style", "display: none");
 
   var pName = document.getElementById("pName").value;

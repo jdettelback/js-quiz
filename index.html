@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Javascript Quiz</title>
   </head>
 
@@ -30,11 +30,12 @@
 
       <div id="stopGame">
         <div id="score"></div>
-
-        <label for="pName">Please input your initials:</label><br /><br />
-        <br /><br />
-        <input type="text" id="pName" name="pName" />
-        <button id="submit">Submit</button>
+        <form action="highscores.html">
+          <label for="pName">Please input your initials:</label><br /><br />
+          <br /><br />
+          <input type="text" id="pName" name="pName" />
+          <button id="submit" type="submit">Submit</button>
+        </form>
       </div>
 
       <div id="finished">
@@ -44,3 +45,7 @@
     <script src="./assets/script.js"></script>
   </body>
 </html>
+
+<!--a href="http://programminghead.com">
+  <button>High Scores</button>
+</a-->
