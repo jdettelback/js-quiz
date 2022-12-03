@@ -197,9 +197,9 @@ submitBtn.addEventListener("click", finishedGame);
 function endGame() {
   stopGame.setAttribute("style", "display: block");
   timeEl.setAttribute("style", "display: none");
+}
 
-
-//function finishedGame() {
+function finishedGame() {
   finished.setAttribute("style", "display: block");
   //startBtn.setAttribute("style", "display: none");
   stopGame.setAttribute("style", "display: block");
@@ -208,7 +208,7 @@ function endGame() {
   var playerName = document.getElementById("playerName");
   localStorage.setItem(pName, secondsLeft);
   score.innerHTML = "<p>" + "You scored a  " + secondsLeft;
-  //playerName.innerHTML =
-    //"<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
+  playerName.innerHTML =
+    "<p>" + pName + ":    " + localStorage.getItem(pName) + "</p>";
   
 }
